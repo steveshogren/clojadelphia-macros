@@ -1,5 +1,7 @@
 (ns dwarffortress.presentation)
 
+;; Templates
+
 ;; Think about templates for a second...
 <html>
   <p>
@@ -24,6 +26,15 @@
   <% } %>
   </ul>
 </html>
+
+
+
+
+
+
+
+
+
 
 
 ;; no quote                +   => #<core$_PLUS_ clojure.core$_PLUS_@d3d424c>
@@ -59,6 +70,19 @@
 ;; Macros allow for the expansion of code -without- the
 ;; increase in stack depth and associated attributes
 
+
+
+
+
+
+
+
+
+
+
+
+
+
 ;; ---- Game probability macros ----
 
 ;; revert to just chance after figuring out what is wrong with '50% and '50x
@@ -73,8 +97,10 @@
               `(defmacro ~macro-name [x# y#]
                  `(if (> ~~num (rand-int 100)) ~x# ~y#))))
           (range 100))))
+
 ;; (make-percents) => (defmacro if0 ...) (defmacro if1 ...) ...
 ;; (pprint (macroexpand '(if1 :x :y)))
+;; (average-out #(if50 1 100) 10000)   
 
 
 
@@ -172,16 +198,9 @@
       `(if-percent-fn ~@pairs))))
 
 
-#_(->> (range 1000)
-       (map (fn [x] (if-percent 50 1 50 100)))
-       average 
-       float)
+;; (average-out #(if-percent 50 1 50 100) 10000)   
 
 
-(defn average [col]
-  (let [sum (reduce + col)
-        count (count col)]
-    (/ sum count)))
 
 
 ;; ---- Anaphoric Macros ----
@@ -252,4 +271,14 @@
 
 
 
+
+(defn average [col]
+  (let [sum (reduce + col)
+        count (count col)]
+    (/ sum count)))
+(defn average-out [func times]
+  (->> (range times)
+       (map (fn [x] (func)))
+       average 
+        float))
 
