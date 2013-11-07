@@ -1,6 +1,6 @@
 ;; Templates
 
-;; Think about templater a second...
+;; Think about templates a second...
 <html>
   <p>
   <?php> if(today_day() == "Monday") { echo("Mon") } </?>
@@ -32,7 +32,7 @@
 
 
 
-`(+ 1 1)
+
 
 
 ;; no quote                +   => #<core$_PLUS_ clojure.core$_PLUS_@d3d424c>
@@ -117,7 +117,7 @@
 
 (if-chance "50%" :a "45%" :b "5%" :c)
 
-(if-percent 50 :a, 45 :b, 5 :c)
+(if-percent 50 (get-db), 45 :b, 5 :c)
 
 (if-percent-b [50 :a] [45 :b] [5 :c])
 ;
@@ -147,7 +147,7 @@
 (defmacro adder [x y]
   `(+ ~x ~y))
 
-(reduce adder 0 [4 5])
+(reduce  #(adder %1 %2) 0 [4 5])
 ;; => java.lang.RuntimeException: Can't take value of a macro: #'user/adder
 
 ;
@@ -201,25 +201,51 @@
 
 
 
-
-
-
 (defmacro if-percent [& n]
   "(if-percent 50 :a 49 :b 1 :c) returns :a 50% of the time, :b 49%, and :c 1%"
   (if (even? (count n))
     (let [pairs (partition 2 n)
-          pairs (mapcat (fn [[pct act]]
-                          [pct `(fn [] ~act)])
+          pairs (mapcat (fn [[percent return]]
+                          [percent `(fn [] ~return)])
                         pairs)]
       `(if-percent-fn ~@pairs))))
 
+
+
 (pprint (macroexpand '(if-percent 50 1 50 100)))
-;; (average-out #(if-percent 50 1 50 100) 10000)   
-;; (average-out #(if-percent ************** 1 ****** 100) 10000)   
+(average-out #(if-percent 50 1 50 100) 10000)   
+(average-out #(if-percent ************** 1 ****** 100) 10000)    
 
 
 
 
+
+
+
+
+
+
+
+
+;; So, while this star syntax is cute, it has a downside: now
+;; we cannot pass bound vals to the macro! 
+
+(let [seventy 70
+      thirty 30]
+  (if-percent seventy 1
+              thirty 100))
+;; => java.lang.Exception: Nums: 65 didn't equal 100
+
+
+(let [seventy 70
+      thirty 30]
+  (if-percent-fn seventy (fn [] 1)
+                 thirty (fn [] 100)))
+;; => Works!
+
+;; So this is the converse power of macros, a neat DSL, while
+;; nice looking, can limit you in surprising ways, and otherwise
+;; make your API actually _harder_ to use
 
 
 
@@ -235,16 +261,11 @@
 
 
 
-(let [x 5]
+(let [x 1]
   (let [x 4]
-    x))
+    x)
+  x)
 
-
-((fn [x]
-   ((fn [x]
-      x)
-    4))
- 5)
 
 
 ;; Here we shadow the z value with another
@@ -252,10 +273,9 @@
   `(let [~'z 100]
      ~x))
 
-(let [z 1]
-  (add-weird (inc z))) ;; => 101 ...not 2 
-
-
+(clojure.walk/macroexpand-all)
+  (let [z 1]
+    (add-weird (inc z)))              ;; => 101 ...not 2 
 
 
 
@@ -283,16 +303,13 @@
       (average _) 
       (float _))
 
+
 (pprint (macroexpand
          '(_> (range 1000)
               (map (fn [x] (if-percent 50 1 50 100)) _)
               (average _) 
+              (/ _ 3)
               (float _))))
-(let [x  (_> (range 1000)
-       (map (fn [x] (if-percent 50 1 50 100)) _)
-       (average _) 
-       (float _))]
-  _)
 
 
 ;; Transliteration of PG's aif
@@ -312,7 +329,8 @@
 (defmacro alambda [parms & body]
   `(letfn [(~'self ~parms ~@body)]
      ~'self))
-#_((alambda [a b] (+ a b)) 1 2)
+
+
 
 #_((alambda [n]
      (if (> n 0)
