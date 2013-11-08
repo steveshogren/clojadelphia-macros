@@ -1,3 +1,27 @@
+
+
+
+
+
+;; The blog post that inspired this talk:
+      deliberate-software.com/intro-to-macros
+;; This file is stored code at:
+      github.com/steveshogren/clojadelphia-macros
+;; Inspired from the book:
+      Let Over Lambda by Doug Hoyte
+      
+
+
+
+
+
+
+
+
+
+
+
+
 ;; Templates
 
 ;; Think about templates a second...
@@ -63,6 +87,8 @@
 (defmacro add [(+ 1 1) 3]
   `(+ (+ 1 1) 3))
 ;; (pprint (macroexpand '(add (+ 1 1) 3))) => (clojure.core/+ (+ 1 1) 3)
+;; Notice the inner + is not namespaced, because it was "passed in"
+;; assuming it was defined in the local namespace
 
 
 ;; Macros allow for the expansion of code as if there was
@@ -212,7 +238,7 @@
 
 
 
-(pprint (macroexpand '(if-percent 50 1 50 100)))
+(pprint (macroexpand '(if-percent 50 1 50 100))) 
 (average-out #(if-percent 50 1 50 100) 10000)   
 (average-out #(if-percent ************** 1 ****** 100) 10000)    
 
@@ -257,6 +283,17 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
 ;; ---- Anaphoric Macros ----
 
 
@@ -273,9 +310,14 @@
   `(let [~'z 100]
      ~x))
 
-(clojure.walk/macroexpand-all)
-  (let [z 1]
-    (add-weird (inc z)))              ;; => 101 ...not 2 
+(let [z 1]
+   (add-weird (inc z)))
+;; => 101 ...not 2 
+
+(clojure.walk/macroexpand-all
+ '(let [z 1]
+   (add-weird (inc z))))
+;; => (let* [z 1] (let* [z 100] (inc z)))
 
 
 
