@@ -42,15 +42,18 @@
 ;; We need a way to see if a map "is-a" Person
 (defn is-type [coll type]
   (if (vector? type) 
-    (reduce (fn [iret k]
-              (and iret
-                   (contains? coll k)))
-            true
-            type)
+    (if (empty? type)
+      true
+      (reduce (fn [iret k]
+                (and iret
+                     (contains? coll k)))
+              true
+              type))
     (instance? type coll)))
 
 (is-type 1 Long)   ;; => true
 (is-type "" Long)  ;; => false
+(is-type 1 [])     ;; => true
 
 (is-type {:id 1 :name "Sam"} Person) ;; => true
 (is-type {:id 1} Person)             ;; => false
@@ -94,7 +97,7 @@
 
 
 
-
+(use 'clojure.tools.trace)
 
 ;; Let's start the macro
 (defmacro deft [name & res] `(defn ~name ~res))
@@ -104,14 +107,52 @@
 
 
 
+
+
+
+
+
+
+
+(defmacro tracelet [args & body]
+  `('let args body))
+
+
+
 ;; we want to add a shape to these
 (defmacro deft [name & res]
-  (let [names-n-types (partition 2 res)]
-    `(defn ~name ~res)))
+  (let [paramlist (trace "paramlist" (first res))
+        return-type (trace "return" (second res))
+        params (trace "params" (getParameters paramlist))
+        pre (trace "pre" (getPre paramlist))
+        prepost (trace "prepost" (addPost pre return-type))
+        body (trace "body" (drop 2 res))]
+    `(defn ~name ~params ~prepost ~@body)))
+(pprint (macroexpand '(deft test [a Person] [] (+ 1 1))))
 
-(defn getParameters [res])
-(defn getPrePost [res])
 
+
+;; (getParameters ['a 1 'b 2 'c 3])
+;; => (a b c)
+(defn getParameters [res]
+  (vec (map first (partition 2 res))))
+
+;; (getPre ['a 't1 'b 't2 'c 't3])
+;; => {:pre [(is-type a t1) (is-type b t2) (is-type c t3)]}
+(defn getPre [res]
+  {:pre
+   (vec (map #(list 'is-type (first %) (second %))
+             (partition 2 res)))})
+(defn addPost [pre res]
+  (conj pre {:post [(list 'is-type '% res)]}))
+
+
+(deft toString [p Person] String
+  (str (:id p) (:name p)))
+
+(def p1 {:id 1 :name "Sam"})
+
+(toString p1)
 
 
 
