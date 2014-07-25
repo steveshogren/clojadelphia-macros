@@ -112,22 +112,15 @@
 
 
 
-
-
-(defmacro tracelet [args & body]
-  `('let args body))
-
-
-
 ;; we want to add a shape to these
 (defmacro deft [name & res]
-  (let [paramlist (trace "paramlist" (first res))
-        return-type (trace "return" (second res))
-        params (trace "params" (getParameters paramlist))
-        pre (trace "pre" (getPre paramlist))
-        prepost (trace "prepost" (addPost pre return-type))
-        body (trace "body" (drop 2 res))]
-    `(defn ~name ~params ~prepost ~@body)))
+  (tracelet [paramlist (first res)
+           return-type (second res)
+           params (getParameters paramlist)
+           pre (getPre paramlist)
+           prepost (addPost pre return-type)
+           body (drop 2 res)]
+       `(defn ~name ~params ~prepost ~@body)))
 (pprint (macroexpand '(deft test [a Person] [] (+ 1 1))))
 
 
@@ -159,3 +152,11 @@
 
 
 
+(defn wrap-args-with-trace [[symb val]]
+  [symb (list 'trace (str "let-" symb) val)])
+
+(defmacro tracelet [args & body]
+  (let [arg-pairs (partition 2 args)
+        new-bindings (vec (mapcat wrap-args-with-trace arg-pairs))]
+    `(let ~new-bindings ~@body)))
+;; (pprint (macroexpand '(tracelet [a 1 b 2] a)))
