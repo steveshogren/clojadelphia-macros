@@ -131,10 +131,6 @@
 
 
 
-
-
-
-
 ;; But this function is lame!
 
 
@@ -381,15 +377,22 @@
         (self (- n 1))))) 5)
 
 
+(defn get-av []
+  (average [1 2 3 4 5]))
 
-
-(defn average [col]
-  (let [sum (reduce + col)
+(defn average [col] 
+  (let [sum (reduce + col),
         count (count col)]
     (/ sum count)))
+
+(defn average [col] 
+  (/ (reduce + col)
+     (count col)))
+
 (defn average-out [func times]
   (->> (range times)
        (map (fn [x] (func)))
        average 
-        float))
+       float))
 
+ 

@@ -73,10 +73,15 @@
 
 
 ;; Now how to change a function to do what we want?
-;; What is my desired interface?
+;; What is my desired syntax?
 
 (defn toString [p Person] String
   (str (:id p) (:name p)))
+
+
+
+
+
 
 
 
@@ -88,8 +93,9 @@
 (defn toString [p]
   {:pre [(is-type p Person)]
    :post [(is-type % String)]}
-  (str (:id p) (:name p)))
+  (str (:id p) " - "(:name p)))
 
+(toString {:id 1 :name "Sam"})
 (toString {:id 1 :firstname "Sam"})
 ;; Holy Runtime Errors Batman!
 
@@ -111,17 +117,18 @@
 
 
 
-
 ;; we want to add a shape to these
 (defmacro deft [name & res]
   (tracelet [paramlist (first res)
-           return-type (second res)
-           params (getParameters paramlist)
-           pre (getPre paramlist)
-           prepost (addPost pre return-type)
-           body (drop 2 res)]
+             return-type (second res)
+             params (getParameters paramlist)
+             pre (getPre paramlist)
+             prepost (addPost pre return-type)
+             body (drop 2 res)]
        `(defn ~name ~params ~prepost ~@body)))
-(pprint (macroexpand '(deft test [a Person] [] (+ 1 1))))
+(mprint '(deft test [a Person] [] (+ 1 1)))
+(deft test [a Person] [] (+ 1 1))
+(test )
 
 
 
@@ -160,3 +167,7 @@
         new-bindings (vec (mapcat wrap-args-with-trace arg-pairs))]
     `(let ~new-bindings ~@body)))
 ;; (pprint (macroexpand '(tracelet [a 1 b 2] a)))
+
+
+(defn mprint [m]
+  (pprint (macroexpand m)))
