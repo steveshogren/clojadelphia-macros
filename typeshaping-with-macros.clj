@@ -22,9 +22,27 @@
 
 
 
+;; We talked actually in the 2.1 session of SICP about a way around this:
+
+(defn person-get-id [p] (:id p))
+(defn person-get-name [p] (:name p))
+(defn toString [p]
+  (str (person-get-id p) (person-get-name p)))
+
+(toString p1)
+
+;; uh-oh
 
 
-;; I wanted a runtime error for things like this, and a programmatic
+
+
+
+
+
+
+
+
+;; I wanted a runtime error when this happens, and a programmatic
 ;; way to see the places I needed to update
 
 
@@ -93,7 +111,7 @@
 (defn toString [p]
   {:pre [(is-type p Person)]
    :post [(is-type % String)]}
-  (str (:id p) " - "(:name p)))
+  (str (:id p) (:name p)))
 
 (toString {:id 1 :name "Sam"})
 (toString {:id 1 :firstname "Sam"})
