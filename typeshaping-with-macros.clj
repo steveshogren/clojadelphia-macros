@@ -1,4 +1,19 @@
+
+
+
+
+
+
+
+
+
+
 ;; what was my problem?
+
+
+
+
+
 
 (def p1 {:id 1 :name "Sam"})
 
@@ -9,11 +24,13 @@
 ;; => 1Sam
 
 
-
-
-(def p1 {:id 1 :firstname "Sam"})
+(def p1 {:id 1 :name "Sam"})
 (toString p1)
 ;; => 1
+
+
+
+
 
 ;; Now it just doesn't show the name, no issue...
 
@@ -69,9 +86,11 @@
               type))
     (instance? type coll)))
 
+(def DontCheck [])
 (is-type 1 Long)   ;; => true
 (is-type "" Long)  ;; => false
-(is-type 1 [])     ;; => true
+(is-type 1 DontCheck)     ;; => true
+(is-type 1 [])            ;; => true
 
 (is-type {:id 1 :name "Sam"} Person) ;; => true
 (is-type {:id 1} Person)             ;; => false
@@ -113,6 +132,8 @@
    :post [(is-type % String)]}
   (str (:id p) (:name p)))
 
+
+
 (toString {:id 1 :name "Sam"})
 (toString {:id 1 :firstname "Sam"})
 ;; Holy Runtime Errors Batman!
@@ -121,13 +142,45 @@
 
 
 
-(use 'clojure.tools.trace)
-
 ;; Let's start the macro
-(defmacro deft [name & res] `(defn ~name ~res))
+
+(defmacro deft [name & res]
+  `(defn ~name ~res))
 
 (deft this [x y] (+ x y))
 (this 1 2)
+(mprint '(deft this [x y] (+ x y)))
+
+
+
+
+
+(deft toString [p Person] String
+  (str (:id p) (:name p)))
+(toString p1)
+
+([p Person] String (str (:id p) (:name p)))
+
+(defn toString [p]
+  {:pre [(is-type p Person)]
+   :post [(is-type % String)]}
+  (str (:id p) (:name p)))
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -146,7 +199,6 @@
        `(defn ~name ~params ~prepost ~@body)))
 (mprint '(deft test [a Person] [] (+ 1 1)))
 (deft test [a Person] [] (+ 1 1))
-(test )
 
 
 
@@ -177,15 +229,28 @@
 
 
 
+
+
+
+
+
+
+;; Macro Helpers
+
 (defn wrap-args-with-trace [[symb val]]
-  [symb (list 'trace (str "let-" symb) val)])
+  [symb (list `trace (str "let-" symb) val)])
 
 (defmacro tracelet [args & body]
   (let [arg-pairs (partition 2 args)
         new-bindings (vec (mapcat wrap-args-with-trace arg-pairs))]
     `(let ~new-bindings ~@body)))
-;; (pprint (macroexpand '(tracelet [a 1 b 2] a)))
+(pprint (macroexpand '(tracelet [a 1 b 2] a)))
 
 
 (defn mprint [m]
   (pprint (macroexpand m)))
+
+(defmacro trace [l v]
+  `(do (println ~l (str ~v)) ~v))
+
+(trace "this" (+ 1 1))
