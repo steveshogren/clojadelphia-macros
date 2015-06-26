@@ -20,6 +20,8 @@
 (defn toString [p]
   (str (:id p) (:name p)))
 
+{:a 1 :b 2 :c  "here how" :d "there we go now" :e "time to file" :f "this that " :g 44444 :h 2}
+
 (toString p1)
 ;; => 1Sam
 
