@@ -1,0 +1,30 @@
+Teaching Clojure at IBM
+
+We had a month till the industry conference. It had to run on JVM. We are a .NET shop. We tallied the team's skills other than C#: Ruby, Java, Python, PHP, Scala, Perl, and Clojure. Not a single overlapping language between us.
+
+"Who would feel comfortable having to train everyone else?"
+
+I put myself forward for Clojure. A month later we shipped.
+
+Here's the report of how I became confident enough to suggest Clojure as an option and then train the rest of the team. I'll cover the skills and attitudes that I believe made the project a success. I'll also make suggestions for what can reduce the friction of introducing Clojure at your company.
+
+Outline:
+(10 Mins) Setting the Stage: what we needed, why we picked Clojure
+
+(10 Mins) Preparation Steps: Learning Clojure enough to be comfortable - 420 hours of side projects, 2 university courses, and working through SICP
+
+(10 Mins) Training Steps: Pair programming, standardized .emacs, morning katas
+
+(10 Mins) Suggestions for introducing Clojure with the least friction: attitudes, start simple, compromise on everything you can, be ready to be wrong constantly
+
+Bio
+
+I am a software engineer, writer, and dev manager. I co-organize Clojadelphia,
+the Philadelphia Clojure meetup. I author the development blog Deliberate
+Software, where I write about Clojure, F#, and skills for new developers.
+
+I have a passion for training and learning. I previously worked as a middle
+school teacher, then later as a developer trainer. I've found Clojure to be the
+tool that gives me the longest lever between my skill and the problem, so it is
+the tool I grab for first. Therefore, most of my teaching these days is around
+Clojure.

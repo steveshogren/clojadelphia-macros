@@ -1,0 +1,52 @@
+No, Really, Learning Clojure Was Hard!
+
+"Rich Hickey and Paul Graham are so awesome and smart; Clojure and Lisp are
+their secret weapons! I'm awesome and smart too, this should be easy! Rich even
+said Clojure is easy, right?"
+
+So started the hardest two weeks of my development career.
+
+You may conclude that I am not smart and that Clojure is actually easy. And
+you'd probably be right. But, starting out, my expectations were set all wrong.
+
+I'd worked professionally in Python, PHP, Perl, and Java. I expected to be able
+to drop in and rewrite my pet PHP project in Clojure over a couple weeks. Two
+weeks later, I was still struggling with basics. Each line of code was a battle
+to comprehend all the new concepts.
+
+In hindsight, it looks so easy, the code legible. But when we forget how
+difficult it can be, we trivialize a new learner's struggles. Saying "oh, that's
+easy, just...", we make them feel inadequate for not seeing it. Our empathy for
+their struggle can make the difference between them giving up because "everyone
+else says this is easy, I must be dumb" and them powering through.
+
+We have to realize: sometimes Clojure is not easy.
+
+
+Notes
+
+I feel like the Clojure community has a persistent external meme that Clojure is
+"easy to learn". Powerful tools are not always easy to learn. I want this talk
+to be a reminder to everyone of their personal learning struggles. Syntactic
+macros, immutability, ParEdit, Cider, and STM - these are very powerful tools.
+They are also difficult to learn, and we've all likely wrestled with them at
+some point.
+
+My goal will be to relate my experiences in those first few weeks to those of
+the audience. I'll advocate for their empathy towards learners, and suggest
+several concrete strategies for improving any conversations they have with
+beginners.
+
+
+Outline: 
+(10 min) Intro - Imagine you've just accomplished a challenging goal.
+You tell someone and they reply, "oh, that, meh, it was easy for me".
+
+(10 min) Explain personal learning journey - 170 hours of lisp before it felt
+comfortable, 420 before I suggested we use it at work.
+
+(10 min) Concrete suggestions for interacting with learners of any skill level:
+don't trivialize their struggles, always celebrate their triumphs, don't just
+tell them the answer.
+
+(10 min) Conclusion - Celebrate the Struggle!
