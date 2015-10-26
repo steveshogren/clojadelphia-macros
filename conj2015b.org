@@ -1,6 +1,6 @@
 * Intro
 ** How many of you use Clojure professionally now?
-*** How many want to use it professionally?
+*** How many _want to_ use it professionally?
 *** How many feel ready to train your office on Monday?
 *** This is where I was last year
 * I will give you steps to prepare yourself to train others
@@ -9,13 +9,20 @@
 **** Started 2.5 years earlier
 Preparation Steps: Learning Clojure enough to be comfortable - 420
 hours of side projects, 2 university courses, and working through SICP
+**** Giving Talks At Local Clojure Meetup
 ** Setting the Stage: what we needed, why we picked Clojure
-*** Had to be JVM, Ruby, Node
+*** Had to be JVM, Ruby, Node - preferably JVM
 *** We had JS, Ruby, Java, Perl, Python, PHP, Scala, Clojure, Scheme, OCaml, Haskell
 No overlaps
 *** I offered to train in Clojure
 **** Everyone seemed comfortable with that
 * Suggestions
+** Energize On Best Parts
+*** REPL Workflow
+*** Brevity
+*** World Class Unit Testing
+*** World Class Parallelism
+*** 80/20 Dependent Typing at Test Time
 ** Compromise on everything
 *** Everyone else is already super uncomfortable
 *** What uncomfortable things are you willing to do?
@@ -28,14 +35,15 @@ No overlaps
 *** Build up foundational parts of the system
 ** Accept All Trash talk
 *** Everything is your fault!
-*** Yes, Clojure sucks sometimes and X easier in BLUB
+While very uncomfortable, you have to realize that there will be mistakes, errors, broken sections
+*** Yes, Clojure sucks sometimes and X easier in Y
+Nothing is perfect
 ** Be Prepared
 (10 Mins) Suggestions for introducing Clojure with the least friction:
 attitudes, start simple, compromise on everything you can, be ready to be wrong
 constantly
 
-
-
+* Original Submission
 
 Teaching Clojure at IBM
 
