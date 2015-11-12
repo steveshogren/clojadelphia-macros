@@ -1,30 +1,68 @@
-* Intro
-** How many of you use Clojure professionally now?
+* Intro (3 min)
+** How many of you are using Clojure professionally?
 *** How many _want to_ use it professionally?
-*** How many feel ready to train your office on Monday?
-*** This is where I was last year
-* I will give you steps to prepare yourself to train others
-** Here is my story
-*** Preparation
-**** Started 2.5 years earlier
+*** How many feel ready to train your team on Monday?
+*** Two years ago I was there
+I knew Clojure "pretty well", but I didn't feel comfortable suggesting it or
+training anyone.
+* Not going to sell you on Clojure
+** If you are here, you probably don't need to be sold!
+** This talk is about preparing _yourself_
+* Here is my story
+** Preparation
+*** Started 2.5 years earlier
 Preparation Steps: Learning Clojure enough to be comfortable - 420
 hours of side projects, 2 university courses, and working through SICP
-**** Giving Talks At Local Clojure Meetup
+*** Giving Talks At Local Clojure Meetup
 ** Setting the Stage: what we needed, why we picked Clojure
 *** Had to be JVM, Ruby, Node - preferably JVM
 *** We had JS, Ruby, Java, Perl, Python, PHP, Scala, Clojure, Scheme, OCaml, Haskell
 No overlaps
 *** I offered to train in Clojure
 **** Everyone seemed comfortable with that
+* I will give you steps to prepare yourself to train others
 * Suggestions
+** Empathy - Impostor Syndrome
+I have come to believe that many developers actually suffer from Impostor
+Syndrome. Impostor Syndrome happens when you feel like you don't belong in a
+group, and are going to be "found out" and exposed. Software development is
+tribal, with each tiny group forming their own norms and customs. I pity those
+who identify as JS developers, they have it the worst. The feeling that they are
+"left out" must happen daily as each new library and tool chain is introduced.
+
+A developer who feels like they aren't "good enough" will be terrified to learn
+a new language. They can feel like this is when they will be "exposed". All the
+parts of their current language they don't understand will now be shown to
+everyone as they don't get concepts in the new language.
+
+*** Understanding how others feel, and adjusting accordingly
 ** Energize On Best Parts
 *** REPL Workflow
-*** Brevity
 *** World Class Unit Testing
+*** Brevity
 *** World Class Parallelism
 *** 80/20 Dependent Typing at Test Time
 ** Compromise on everything
 *** Everyone else is already super uncomfortable
+For a subset of developers, learning a new language can be one of the most
+intimidating things they can be asked to do.
+
+Think about what would intimidate you at your job? Would it be managing others,
+taking on sales and marking responsibilities, dealing with little kids? Think
+how you would feel if your boss came in and told you your role was changing,
+from now on 4 days a week you will be on the phone selling to clients. Would you
+be angry, feel like your skills are wasted? Feel shortchanged? "That's not what
+I signed up for!"
+
+I guarantee many developers would be unhappy if told, "Monday we are switching
+to Clojure". Many would feel like they've spent their career becoming great
+"Java developers" or great "Ruby developers", and now are being asked to "throw
+all that away". Of course, if you know more than a few languages, you realize a
+lot of those skills are not thrown away, they just have a new syntax. _But if
+they are afraid, they probably don't know that._
+
+If a large group in your team feels this way, how do you win them over? 
+
 *** What uncomfortable things are you willing to do?
 **** Different editors
 **** Different shortcuts
@@ -35,7 +73,8 @@ No overlaps
 *** Build up foundational parts of the system
 ** Accept All Trash talk
 *** Everything is your fault!
-While very uncomfortable, you have to realize that there will be mistakes, errors, broken sections
+While very uncomfortable, you have to realize that there will be mistakes,
+errors, broken sections.
 *** Yes, Clojure sucks sometimes and X easier in Y
 Nothing is perfect
 ** Be Prepared
