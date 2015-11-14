@@ -25,6 +25,28 @@ No real overlaps
 * I will give you steps to prepare yourself to train others
 * Suggestions
 ** Have Empathy - Impostor Syndrome
+*** Put yourself in their shoes
+Think about what would intimidate you at your job. Would it be managing others,
+taking on sales and marking responsibilities, dealing with little kids? Think
+how you would feel if your boss came in and told you your role was changing,
+from now on 4 days a week you will be on the phone selling to clients. Would you
+be angry, feel like your skills are wasted? Feel shortchanged? "That's not what
+I signed up for!" Would you quit on the spot?
+
+For a subset of developers, learning a new language can be one of the most
+intimidating things they can be asked to do.
+
+I guarantee many developers would be feel the same way if told, "Monday we are
+switching to Clojure". Many would feel like they've spent their career becoming
+great "Java developers" or great "Ruby developers", and now are being asked to
+"throw all that away". Of course, if you know more than a few languages, you
+realize most of those skills are not thrown away, they just have a new syntax.
+_But if they are afraid, they probably don't know that._
+
+*** Everyone else is already super uncomfortable
+
+If a large group in your team feels this way, how do you win them over? 
+
 I have come to believe that many developers actually suffer from Impostor
 Syndrome. Impostor Syndrome happens when you feel like you don't belong in a
 group, and are going to be "found out" and exposed. Software development is
@@ -36,26 +58,6 @@ A developer who feels like they aren't "good enough" will be terrified to learn
 a new language. They can feel like this is when they will be "exposed". All the
 parts of their current language they don't understand will now be shown to
 everyone as they don't get concepts in the new language.
-
-*** Everyone else is already super uncomfortable
-For a subset of developers, learning a new language can be one of the most
-intimidating things they can be asked to do.
-
-Think about what would intimidate you at your job? Would it be managing others,
-taking on sales and marking responsibilities, dealing with little kids? Think
-how you would feel if your boss came in and told you your role was changing,
-from now on 4 days a week you will be on the phone selling to clients. Would you
-be angry, feel like your skills are wasted? Feel shortchanged? "That's not what
-I signed up for!"
-
-I guarantee many developers would be feel the same way if told, "Monday we are
-switching to Clojure". Many would feel like they've spent their career becoming
-great "Java developers" or great "Ruby developers", and now are being asked to
-"throw all that away". Of course, if you know more than a few languages, you
-realize a lot of those skills are not thrown away, they just have a new syntax.
-_But if they are afraid, they probably don't know that._
-
-If a large group in your team feels this way, how do you win them over? 
 ** Energize On Best Parts
 *** REPL Workflow
 *** World Class Unit Testing
@@ -63,28 +65,37 @@ If a large group in your team feels this way, how do you win them over?
 *** World Class Parallelism
 *** 80/20 Test Time Dependent Typing with typeshaping via Schema
 ** Compromise on everything
-*** What uncomfortable things are you willing to do?
+*** Everyone else is uncomfortable, what uncomfortable things are you willing to do?
 **** Different editors
 **** Different shortcuts
 **** Being the "floater" to answer questions
-**** Daily guided warm up katas
+**** Pair programming
 ** Make everything easy
-*** Provide Style Guide
-*** Build up foundational parts of the system
-** Accept All Trash talk
-*** Everything is your fault!
-While very uncomfortable, you have to realize that there will be mistakes,
-errors, broken sections.
-*** Yes, sometimes Clojure sucks and X easier in Y
-Nothing is perfect
-** Be Prepared
 *** My Roughest Edges
 **** No standard lein profile
-**** No understanding of profiles.clj for development machine differences
+**** Didn't know about profiles.clj for local machine differences
 **** Poor understanding of clojure deployment
 **** Using EMACS with non-standard setup (Evil, ParEdit)
 **** Poor understanding of compojure/ring/friend workflows
+**** Getting OAuth to work
+**** Figuring out acceptance testing
 **** No real documentation of architecture
+*** Provide Style Guide
+*** Build up foundational parts of the system
+** Separate your ego
+*** Everything is your fault!
+While very uncomfortable, you have to realize that there will be mistakes,
+errors, broken sections. You will likely be blamed for all of this!
+*** They will look for ways to put the language down to feel better
+**** Me with Ruby/ Zipzip/Gems/Bundle
+*** Accept All Trash talk
+**** Yes, sometimes Clojure sucks and X easier in Y
+Nothing is perfect. Nothing will ever "just work". Developing software is
+immensely complicated. Some things will hang, tools will run wild, IDE's will
+crash.
+**** Come to their aid
+** Be Prepared
+*** Daily guided warm up katas
 *** Due Diligence
 I could stand here and tell you, "you'll never know it all, just dive in." But
 that would be dishonest. I don't think it is wise to suggest a change on the
@@ -106,6 +117,14 @@ should have a recommended course for at least the major categories.
 *** What do you need?
 Could you build the project right now? What don't you know? What would you need
 to know to complete such a project? Have you done any prototypes?
+* Conclusion
+** Have empathy
+** Make everything easy
+*** Standardize 
+*** Provide Broad Recommendations 
+** Be prepared
+*** Build up foundational sections
+** Separate your ego from the language/tooling
 
 * Original Submission
 
