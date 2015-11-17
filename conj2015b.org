@@ -1,7 +1,7 @@
 * Not going to sell you on Clojure
 ** If you are here, you probably don't need to be sold!
 ** This talk is about preparing _yourself_
-*** after they say yes
+*** After they say yes
 * Intro (3 min)
 ** How many of you are using Clojure professionally?
 ** How many _want to_ use it professionally?
@@ -19,7 +19,6 @@
 ** Setting the Stage: what we needed, why we picked Clojure
 *** Had to be JVM, Ruby, Node - preferably JVM
 *** We had JS, Ruby, Java, Scala, Clojure, C#
-No real overlaps
 *** I offered to train in Clojure
 **** Everyone seemed comfortable with that
 *** No one asked or cared waht we wrote it in mostly
@@ -70,39 +69,10 @@ No real overlaps
 *** Daily guided warm up katas
 * Conclusion
 ** These are the steps that I believe made our project successful
-** Still using Clojure today
+*** both for business, but also for a technical adoption
+** Still using Clojure today, important part of tool chain
 ** Convincing Coworkers
-** Happy to discuss and help any way I can
-** Thanks!
-
-* Original Submission
-
-Teaching Clojure at IBM
-
-We had a month till the industry conference. It had to run on JVM. We are a .NET
-shop. We tallied the team's skills other than C#: Ruby, Java, Python, PHP,
-Scala, Perl, and Clojure. Not a single overlapping language between us.
-
-"Who would feel comfortable having to train everyone else?"
-
-I put myself forward for Clojure. A month later we shipped.
-
-Here's the report of how I became confident enough to suggest Clojure as an
-option and then train the rest of the team. I'll cover the skills and attitudes
-that I believe made the project a success. I'll also make suggestions for what
-can reduce the friction of introducing Clojure at your company.
-
-Outline: 
-
-
-Bio
-
-I am a software engineer, writer, and dev manager. I co-organize Clojadelphia,
-the Philadelphia Clojure meetup. I author the development blog Deliberate
-Software, where I write about Clojure, F#, and skills for new developers.
-
-I have a passion for training and learning. I previously worked as a middle
-school teacher, then later as a developer trainer. I've found Clojure to be the
-tool that gives me the longest lever between my skill and the problem, so it is
-the tool I grab for first. Therefore, most of my teaching these days is around
-Clojure.
+*** its on leanpub.com
+** I'm happy to discuss further and help any way I can
+*** Email, call, discuss in the hallways
+** Thanks for your time!
