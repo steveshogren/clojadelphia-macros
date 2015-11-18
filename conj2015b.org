@@ -48,14 +48,14 @@
 **** Being the "floater" to answer questions
 **** Pair programming
 *** Make everything easy
+**** Provide Style Guide
+**** Build up foundational parts of the system
 **** My Roughest Edges
 ***** No standard lein profile or profiles.clj
 ***** Poor understanding of clojure deployment
 ***** Using EMACS with non-standard setup (Evil, ParEdit)
 ***** Poor understanding of compojure/ring/friend workflows and OAuth
 ***** No real documentation of architecture
-**** Provide Style Guide
-**** Build up foundational parts of the system
 ** Separate your ego
 *** Everything is your fault!
 **** Accept All Trash talk
@@ -66,8 +66,8 @@
 ** Be Prepared
 *** HAVE TO PREPARE Due Diligence
 **** You need to be prepared to lead
-*** Daily guided warm up katas
 * Conclusion
+** Empthy, Energize on highest value, compromise on everything, separate your ego, be prepared
 ** These are the steps that I believe made our project successful
 *** both for business, but also for a technical adoption
 ** Still using Clojure today, important part of tool chain
