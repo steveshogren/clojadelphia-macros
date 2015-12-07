@@ -1,0 +1,85 @@
+One hat we didn't talk about yesterday was the red hat for why we emotionally
+wanted to make a change. I spent some time reflecting and was surprised by my
+motivations for why I wanted to change entirely to the book's practices. (I will
+lump together our automation engineering staff into the dev team for this
+writing)
+
+When reading the book, I felt a wave of relief at how nice it must feel to work
+in that environment, one where we celebrate our victories. An environment where
+almost every week is a successful week for what was accomplished, rather than a
+bitter disappointment at how little it was compared to expectations. It made me
+yearn to see the dev team and BA team not constantly bickering over minutia of
+“our practices”.
+
+Jason brought up a fantastic point at the end of that meeting, accurately
+calling out Dave and I for bickering about a stupid detail of “who remembers the
+book better.” I think we've gotten to a place where we try to use our process to
+solve people problems.
+
+A lot of developers have felt over the last few months that we have been a
+constant disappointment to the business, that nothing we do is ever good enough.
+From the beginning of the release, when we estimated epics, we got incredulous
+laughs and comments by GSS and several BA's that our estimates were too high.
+That attitude has morphed into either constant disappointment or complete
+detachment from the BA's as the release has continued. Last week I overheard a
+developer say that they are “completely tired of working here because we always
+disappoint the business no matter how hard we work or what we accomplish.”
+
+I've also seen the developers turn to process like it will change this, and
+become incredibly nit-picky over every little thing. Too many times I have heard
+developers doing and saying things that go against common sense simply for the
+sake of following the process. If I am honest with myself, I see that I have
+done it too. Not only that, but we have turned almost every interaction with a
+BA into them having to perform hoop jumping to communicate and meet OUR
+expectations for the current process. “You didn't put enough acceptance criteria
+on this story”, “stories shouldn't have acceptance criteria beforehand”, “you
+wrote this story too big”, “bugs should always be fixed immediately, don't put
+it in the backlog”, “bugs can be triage'd if appropriate”, “we won't look at a
+performance story unless you put in concrete requirements”. Instead of solving
+anything, our inflexibility and finger pointing only makes the issue so much
+worse. I think this comes from a place where developers feel like they are a
+disappointment to the BA's, so then they cling to unwritten “rules” about the
+process. The hope is that the process will let us be faster, and if we are
+faster, then we won't be such a disappointment. I suspect there is also some
+element of wanting to have something to lord over the BA staff like they lord
+expectations over us. It is easier to take disappointment from the business if
+you can then be disappointed in them for “getting the process wrong.”
+
+While we are trying to improve, we will never address the underlying people
+issues with more process. Instead of a culture of celebration of our victories,
+we still will only see our failures and disappointments.
+
+When I read that book, I saw a process that looks like it led to happy, healthy
+teams of BAs and devs working well together. I thought, “well, I want to be
+happy and healthy, let's do that process!” In reality, there is nothing really
+wrong with our current process. The only thing that is not working is we have
+become more and more a culture that tries to point out the “wrong” and not
+celebrate the “right”. No process will solve that. No process will prevent us
+from nit-picking about trivial details of story writing. No process will prevent
+the BA staff from feeling constantly attacked for “practice violations”. No
+process will prevent us from the very real business need to estimate out years
+of work in advance.
+
+What I would like to see is us turn away from this blame culture and
+disappointment culture. I want us to recognize the amazing work we all do. No
+one here is slacking. No one here is trying to undermine the efforts of others.
+We are a team of truly amazing contributors. Every person here is among the most
+capable people I have ever worked with. As a whole development team, from BA,
+dev, and QA, I've never seen or heard of a team that meets so many customer
+needs with such high quality. Why would we need to blame anyone or be in any way
+disappointed?
+
+I'd like to see us become a place where, if the developer feels like the story
+doesn't have enough detail, they ask for it and add it themselves without
+browbeating the BA for missing something. If the BA staff isn't happy with how
+much we produce, they reset their expectations and celebrate what we
+accomplished. If a developer is asked to “make the system faster”, they gather
+numbers and offer up several stories with acceptance criteria along with
+different estimates like professionals. If someone learns more about a story, we
+re-estimate it with the new information. If the development staff is asked to
+estimate out stories four years, we do it to the best of our abilities without
+complaining. If the dev team wants to be treated with respect, we need to act
+like professionals, not sullen children. The BA staff needs to be engaged and
+not feel like they are constantly picked on for stupid practice violations. We
+all need to feel celebrated for the hard work we put in making such a fantastic
+product.
