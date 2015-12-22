@@ -25,7 +25,6 @@
 (defn map-digits-to-place [digits]
   (reverse (map vector (list 1 10 100 1000) (reverse digits))))
 
-
 (defn next-increment [digit increments]
   (apply max (filter #(>= digit %) increments)))
 
@@ -43,8 +42,7 @@
           (str (get lookup 1)
                (get lookup (+ 1 digit)))
           (let [next-smallest-increment (next-increment digit increments)
-                next-value (get increments next-smallest-increment)]
-            (clojure.core.trace/trace "trse")
+                next-value (get lookup next-smallest-increment)]
             (recur (- digit next-smallest-increment)
                    (conj ret next-value))))))))
 
