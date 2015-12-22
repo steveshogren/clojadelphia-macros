@@ -54,6 +54,31 @@
       (recur (rest arabic)
              (str ret (romanize-digit (first arabic)))))))
 
+
+(defn roman-symbol-pattern
+  ([o x] (apply str (repeat x o)))
+  ([o f t x]
+   (let [pattern {1 [o],     2 [o o],     3 [o o o],
+                  4 [o f],   5 [f],       6 [f o],
+                  7 [f o o], 8 [f o o o], 9 [o t]}]
+     (apply str (get pattern x)))))
+
+(defn romanize-digit [arabic pattern]
+  (let [[magnitude & chars] pattern
+        value (if (>= arabic magnitude)
+                (quot (mod arabic (* magnitude 10)) magnitude)
+                0)
+        args (conj (vec chars) value)]
+    (apply roman-symbol-pattern args)))
+
+(defn to-roman [arabic]
+  (->> [[1000 \M]
+        [100  \C \D \M]
+        [10   \X \L \C]
+        [1    \I \V \X]]
+       (map (partial romanize-digit arabic))
+       (apply str)))
+
 (to-roman 9) ; IX
 (to-roman 29) ; XXIX
 (to-roman 448) ; CDXLVIII
