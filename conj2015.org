@@ -1,3 +1,18 @@
+Agile Testing Days --
+Title: A Decade of Self-Organizing XP Teams 
+Subheadline: We have had several self-organizing XP teams for the last decade. Here are the results!
+Main Statement: Self-organizing teams are not for every office, but ours has used them to become the dominant market leader.
+Technical Keywords: management self-organizing xp 
+Key Learnings: Intrinsic Motivation, Self-Organization, Servant Leadership
+Abstract: Our office was founded on the principals of XP and self-organization. Over the last decade, we have built the industry-leading software for collateral management. Our developers are empowered to build high-quality software. Self-organization and intrinsic motivation allow them to rapidly mature. The software we have written remains high-quality and easy to add new features. 
+
+
+
+--
+
+
+
+
 No, Really, Learning Clojure Was Hard!
 
 "Rich Hickey and Paul Graham are so awesome and smart; Clojure and Lisp are
