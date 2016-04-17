@@ -1,15 +1,18 @@
 Agile Testing Days --
+Clip: 
+How do you build an adaptive Enterprise team that can rapidly build high-quality features that will withstand a decade of change? Two things: one, hire great people. Two, feel entirely out of control as you entrust and empower them to meet the business's needs. In this talk I will share lessons learned from a decade of self-organizing teams practicing TDD and pair-programming. Join me in observing how we built and maintain a 4 and a half million line codebase. We will talk about how you can build such a team, and the potential challenges you will face as you lead your teams to success. 
+
 Title: 
 A Decade of Self-Organizing XP Teams
 Subheadline: 
 Our department has used self-organizing teams to become the dominant market leader in our industry
 Main Statement: 
 Come see the results of over a decade of active development using TDD and pair-programming.
-
 Technical Keywords: management self-organizing xp tdd pair-programming
 Key Learnings: Intrinsic Motivation, Self-Organization, Servant Leadership, Pair-Programming TDD
 Abstract: 
-How do you build an Enterprise team that can rapidly build high-quality features for a decade? You hire great people, and entrust them. In this talk I will share lessons learned from a decade of self-organizing teams. Join me in observing statistics about our 4.3 million line codebase built entirely with TDD and pair-programming. We will be talking about how you can build such a team from the ground up, and the potential challenges you will face. 
+
+How do you build an adaptive Enterprise team that can rapidly build high-quality features that will withstand a decade of change? You hire great people, and empower them to meet the business's needs. In this talk I will share lessons learned from a decade of self-organizing teams practicing TDD and pair-programming. Join me in observing how we built and maintain a 4.3 million line codebase. We will talk about how you can build such a team, and the potential challenges you will face as you lead your teams to success. 
 
 Our office was founded on the principals of XP and self-organization. Over the last decade, we have built the industry-leading software for bank collateral management. Our developers are empowered to organize around the needs of the business. Self-organization and intrinsic motivation allow each individual to rapidly mature. As a group, we continue to vote to re-adopt pair-programming and TDD as foundational pillars of our practice. We have rich co-op program that feeds our teams with the best university gradutates. 
 
