@@ -10,18 +10,17 @@ You may conclude that I am not smart and that Clojure is actually easy. And
 you'd probably be right. But, starting out, my expectations were set all wrong.
 
 I'd worked professionally in Python, PHP, Perl, and Java. I expected to be able
-to drop in and rewrite my pet PHP project in Clojure over a couple weeks. Two
-weeks later, I was still struggling with basics. Each line of code was a battle
-to comprehend all the new concepts.
+to drop in and rewrite my pet PHP project in Clojure over a couple weeks. 
 
-In hindsight, it looks so easy, the code legible. But when we forget how
-difficult it can be, we trivialize a new learner's struggles. Saying "oh, that's
+
+
+Saying "oh, that's
 easy, just...", we make them feel inadequate for not seeing it. Our empathy for
 their struggle can make the difference between them giving up because "everyone
 else says this is easy, I must be dumb" and them powering through.
 
-We have to realize: sometimes Clojure is not easy.
 
+Everyone says Clojure is simple and easy, right? "I'll just quick learn it over the weekend!" So started the hardest two weeks of my development career. Two weeks later, I was still struggling with basics. Each line of code was a battle to comprehend all the new concepts. S-expressions? Macros? Wait, you can say (:key map) AND (map :key)?! In hindsight, it looks so easy, the code legible. But when we forget how difficult it can be, we trivialize a new learner's struggles. We have to remember: sometimes learning Clojure is not easy.
 
 Notes
 
