@@ -1,10 +1,12 @@
 Agile Testing Days --
 Title: A Decade of Self-Organizing XP Teams 
-Subheadline: We have had several self-organizing XP teams for the last decade. Here are the results!
-Main Statement: Self-organizing teams are not for every office, but ours has used them to become the dominant market leader.
-Technical Keywords: management self-organizing xp 
-Key Learnings: Intrinsic Motivation, Self-Organization, Servant Leadership
-Abstract: Our office was founded on the principals of XP and self-organization. Over the last decade, we have built the industry-leading software for collateral management. Our developers are empowered to build high-quality software. Self-organization and intrinsic motivation allow them to rapidly mature. The software we have written remains high-quality and easy to add new features. 
+Subheadline: Our department has used self-organizing teams to become the dominant market leader in our industry.
+Main Statement: 
+Come see the results of over a decade of active development using TDD and pair-programming.
+
+Technical Keywords: management self-organizing xp tdd pair-programming
+Key Learnings: Intrinsic Motivation, Self-Organization, Servant Leadership, Pair-Programming TDD
+Abstract: Our office was founded on the principals of XP and self-organization. Over the last decade, we have built the industry-leading software for bank collateral management. Our developers are empowered to organize around the needs of the business. Self-organization and intrinsic motivation allow each individual to rapidly mature. As a group, we have decided to adopt pair-programming and TDD as foundational pillars of our practice. We 
 
 
 
