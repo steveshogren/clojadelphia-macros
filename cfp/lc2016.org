@@ -1,0 +1,9 @@
+No, Really, Learning Clojure Was Hard!
+
+Everyone says Clojure is simple and easy, right? "I'll just quick learn it over
+the weekend!" So started the hardest two weeks of my development career. Two
+weeks later, I was still struggling with basics. Each line of code was a battle
+to comprehend all the new concepts. S-expressions? Macros? Wait, you can say
+(:key map) AND (map :key)?! In hindsight, it looks so easy, the code legible.
+But when we forget how difficult it can be, we trivialize a new learner's
+struggles. We have to remember: sometimes learning Clojure is not easy.
