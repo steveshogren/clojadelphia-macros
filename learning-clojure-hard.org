@@ -1,0 +1,30 @@
+* Intro Story
+** I want to start with a funny story
+** Got Turned Around on LambdaConf submission dates
+** Woke up, 630am, pulled up on my phone the CFP
+*** Aw, ended yesterday!
+*** WAIT A MINUTE ITS STILL FEB 1 IN ALASKA!
+** how weird it is that I even _thought_ that?!
+*** Programming In ANY language is hard
+**** Messy human concepts just don't translate well to programs
+** What we do is a lot harder than we think
+* Learning Anything of Value is Hard!
+* It took me a long time to learn Clojure
+* Who wants to be a better mentor/teacher?
+** How many of you want to be better teachers?
+** How many know more than one programming language
+* "Oh, that's easy!"
+** You are sitting there, new learner comes up
+*** "I don't get this"
+** Don't defend the language!
+* "Well, Actually!"
+** Abstract class vs interface
+* Be a better learner!
+** I looked like a doofus about Haskell
+** Empathize with bad teachers!
+* Conclusion
+** "Looking Backwards the Path Looks Straight, Forwards, nothing but branches"
+*** Dozens of books, languages, libraries, frameworks, etc
+** Was it worth it?
+*** Absolutely!
+**** Hard things expand your skills!
