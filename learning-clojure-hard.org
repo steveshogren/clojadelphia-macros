@@ -10,14 +10,16 @@
 ** What we do is a lot harder than we think
 * Learning Anything of Value is Hard!
 * It took me a long time to learn Clojure
+** Paul Graham and Bob Martin think Lisp is a secret weapon
+** I got blocked immediately
 * Who wants to be a better mentor/teacher?
 ** How many of you want to be better teachers?
 ** How many know more than one programming language
-* "Oh, that's easy!"
+* "That sounds frustrating" - "Oh, that's easy!"
 ** You are sitting there, new learner comes up
 *** "I don't get this"
 ** Don't defend the language!
-* "Well, Actually!"
+* "Can you show me" - "Well, Actually!"
 ** Abstract class vs interface
 * Be a better learner!
 ** I looked like a doofus about Haskell
@@ -28,3 +30,4 @@
 ** Was it worth it?
 *** Absolutely!
 **** Hard things expand your skills!
+*** Favorite post "Teach Yourself Programming in 10 Years"
