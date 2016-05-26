@@ -8,18 +8,20 @@
 *** Programming In ANY language is hard
 **** Messy human concepts just don't translate well to programs
 ** What we do is a lot harder than we think
+*** Pat yourself on the back, yep THIS IS HARD
 * Learning Anything of Value is Hard!
 * It took me a long time to learn Clojure
 ** Paul Graham and Bob Martin think Lisp is a secret weapon
 ** I got blocked immediately
 * Who wants to be a better mentor/teacher?
 ** How many of you want to be better teachers?
-** How many know more than one programming language
-* "That sounds frustrating" - "Oh, that's easy!"
+* "Empathize" - "Oh, that's easy!"
 ** You are sitting there, new learner comes up
 *** "I don't get this"
 ** Don't defend the language!
-* "Can you show me" - "Well, Actually!"
+*** Ally with the human, not the programming language!
+**** Put your ego aside
+* "Ask questions" - "Well, Actually!"
 ** Abstract class vs interface
 * Be a better learner!
 ** I looked like a doofus about Haskell
