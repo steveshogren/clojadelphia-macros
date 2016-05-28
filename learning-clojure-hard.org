@@ -1,5 +1,4 @@
 * Intro Story
-** I want to start with a funny story
 ** Got Turned Around on LambdaConf submission dates
 ** Woke up, 630am, pulled up on my phone the CFP
 *** Aw, ended yesterday!
@@ -13,7 +12,7 @@
 * It took me a long time to learn Clojure
 ** Paul Graham and Bob Martin think Lisp is a secret weapon
 ** I got blocked immediately
-* Who wants to be a better mentor/teacher?
+* You are all here because you want to improve and learn new things
 ** How many of you want to be better teachers?
 * "Empathize" - "Oh, that's easy!"
 ** You are sitting there, new learner comes up
@@ -27,9 +26,15 @@
 ** I looked like a doofus about Haskell
 ** Empathize with bad teachers!
 * Conclusion
-** "Looking Backwards the Path Looks Straight, Forwards, nothing but branches"
-*** Dozens of books, languages, libraries, frameworks, etc
+# ** "Looking Backwards the Path Looks Straight, Forwards, nothing but branches"
+# *** Dozens of books, languages, libraries, frameworks, etc
 ** Was it worth it?
 *** Absolutely!
 **** Hard things expand your skills!
 *** Favorite post "Teach Yourself Programming in 10 Years"
+** If you are stuck THAT IS NORMAL
+*** Try other things, don't despair
+** Quote
+"A well-trained mind is more than vanity. It shows discipline, dignity, and
+dedication. It requires patience, passion, and self-respect. It cannot be
+bought, stolen, or inherited. It cannot be held onto without constant work."
