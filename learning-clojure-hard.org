@@ -25,16 +25,17 @@
 * Be a better learner!
 ** I looked like a doofus about Haskell
 ** Empathize with bad teachers!
+*** Don't let a bad teacher stop you!
 * Conclusion
-# ** "Looking Backwards the Path Looks Straight, Forwards, nothing but branches"
-# *** Dozens of books, languages, libraries, frameworks, etc
 ** Was it worth it?
 *** Absolutely!
 **** Hard things expand your skills!
 *** Favorite post "Teach Yourself Programming in 10 Years"
-** If you are stuck THAT IS NORMAL
+** If you are stuck THAT IS NORMAL 
+*** THERE IS NO WRONG WAY
+*** "Looking Backwards the Path Looks Straight, Forwards, nothing but branches"
 *** Try other things, don't despair
-** Quote
+** Quote "We are athletes of the mind"
 "A well-trained mind is more than vanity. It shows discipline, dignity, and
 dedication. It requires patience, passion, and self-respect. It cannot be
 bought, stolen, or inherited. It cannot be held onto without constant work."
