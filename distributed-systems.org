@@ -1,0 +1,17 @@
+* Theory
+** Systems are not applications
+- Applications are single-threaded, no need for "connectivity"
+- Systems are not composed of applications, but executables
+-- Multiple system component/executable form a network
+** [8 Fallacies of Distributed computing](https://en.wikipedia.org/wiki/Fallacies_of_distributed_computing)
+Effectively, these prove how systems MUST be treated differently from an
+application. And that applications are a very very different animal from a
+system. (e.g. can't trust network, n+1)
+
+- A possible design [4+1 architecture?](https://en.wikipedia.org/wiki/4%2B1_architectural_view_model)
+- Can be versioned separately/maintained by different teams
+* Messaging Patterns
+** Why?
+   - Reduce coupling 
+     - Platform
+     - Temporal

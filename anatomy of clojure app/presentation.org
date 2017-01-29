@@ -1,15 +1,24 @@
 * Intro
 ** Have you ever seen a Java/Ruby/C#/Python application? 
-*** Clojure will be 99% the same!
+*** Clojure will be 99% the same architecture!
+** I remember being totally stumped by immutability
+*** How would anything be possible with that restriction?
+**** If you want to mutate state, just pass it in and out!
+**** vars, refs, regular Java data structures, etc
 * A Basic Command-line Application
 ** A regular JVM main function by any other name
+When making a command-line application, you define an entry-point, then have
+functions call other functions until you have finished processing the input. Any
+output is displayed. Finally control is returned to the OS by returning from
+that entry function. Clojure command line applications are no different.
 ** Uses tools-cli for parsing
 * A Basic Web Application
 ** How would we make it, knowing Java?
 ** Surely the Clojure application will look similar...
-** Uses luminus for "working example"
+** Uses Luminus for "working example"
 * A Bigger Web Application
 ** Uses compojure for routing and ring handling
 * BONUS ROUND A Persistent Game
 ** A regular JVM main function by any other name
 ** Uses tools-cli for parsing
+
