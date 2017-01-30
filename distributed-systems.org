@@ -15,3 +15,16 @@ system. (e.g. can't trust network, n+1)
    - Reduce coupling 
      - Platform
      - Temporal
+        - REST requires temporal coupling (both servers need to be up)
+     - Autonomous
+** How?
+   - Shared schemas
+   - Asynchronous messaging
+     - Pub/Sub
+     - Return Address pattern
+     - Correlated Request/Response
+     - All messages have an id
+   - Can't use REST
+     - REST requires temporal coupling (both servers need to be up)
+   - MSMQ (store-and-forward) adds resilience
+     - Subscriber can still have errors... what then?
