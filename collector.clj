@@ -5,8 +5,19 @@
           x))
 
 (defn sorter [x]
-  (reverse (sort-by val x))
+  (reverse (sort-by val x)))
+
+(defn roll-d10 []
+  (rand-int 10))
+
+(defn is-balanced [rolls]
+  (let [counts (map val rolls)
+        average (/ (reduce + counts) (count counts))]
+    average)
   )
-
-
-(sorter (collector [2 2 2 2 1 4 4 7 7]))
+(->> (range 0 100)
+     (map (fn [_] (roll-d10)))
+     (collector)
+     (sorter)
+     (is-balanced)
+    )
