@@ -25,3 +25,32 @@
      (sorter)
      (is-balanced)
     )
+
+(defn lookup [st]
+  (case st
+    " _ | ||_|" 0
+    "     |  |" 1
+    99
+    )
+  )
+
+
+(defn partition3 [s]
+  (map (partial apply str) (partition 3 s)))
+
+(defn ocr [d]
+  (let [[top mid bot space] (filter (fn [x]
+                              (not= "" x))
+                            (clojure.string/split d #"\n"))
+        letters (map (fn [t m b]  (lookup (str t m b)))
+                     (partition3 top)
+                     (partition3 mid)
+                     (partition3 bot))]
+    letters))
+
+(ocr "
+ _    
+| |  |
+|_|  |
+      
+")
