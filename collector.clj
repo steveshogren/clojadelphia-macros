@@ -19,21 +19,28 @@
              [in-tolerance average tolerance cnt]))
          counts)))
 
-(->> (range 0 10000)
-     (map (fn [_] (roll-d10)))
-     (collector)
-     (sorter)
-     (is-balanced)
-    )
+(comment (->> (range 0 10000)
+             (map (fn [_] (roll-d10)))
+             (collector)
+             (sorter)
+             (is-balanced)
+             ))
 
 (defn lookup [st]
   (case st
     " _ | ||_|" 0
     "     |  |" 1
+    " _  _||_ " 2
+    " _  _| _|" 3
+    "   |_|  |" 4
+    " _ |_  _|" 5
+    " _ |_ |_|" 6
+    " _   |  |" 7
+    " _ |_||_|" 8
+    " _ |_|  |" 9
     99
     )
   )
-
 
 (defn partition3 [s]
   (map (partial apply str) (partition 3 s)))
@@ -49,8 +56,8 @@
     letters))
 
 (ocr "
- _    
-| |  |
-|_|  |
-      
+ _     _  _     _  _  _  _  _ 
+| |  | _| _||_||_ |_   ||_||_|
+|_|  ||_  _|  | _||_|  ||_|  |
+                              
 ")
