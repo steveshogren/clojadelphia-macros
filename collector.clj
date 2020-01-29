@@ -38,26 +38,54 @@
     " _   |  |" 7
     " _ |_||_|" 8
     " _ |_|  |" 9
-    99
+    nil
     )
   )
 
 (defn partition3 [s]
   (map (partial apply str) (partition 3 s)))
 
+(defn character-at [idx]
+  (case idx
+    0 " "
+    1 "_"
+    2 " "
+    3 "|"
+    4 "_"
+    5 "|"
+    6 "|"
+    7 "_"
+    8 "|"
+    " "))
+
+(defn permutations [st]
+  (filter (comp not nil?)
+          (map (fn [x]
+                 (let [attempt (apply str (assoc (vec st) x (character-at x)))]
+                   (println (str "message" attempt) )
+                   (lookup attempt)))
+               (range (count st))))
+  )
+
 (defn ocr [d]
   (let [[top mid bot space] (filter (fn [x]
                               (not= "" x))
                             (clojure.string/split d #"\n"))
-        letters (map (fn [t m b]  (lookup (str t m b)))
+        letters (map (fn [t m b]
+                       (let [s (str t m b)
+                             value (lookup s)]
+                         (if (nil? value)
+                            (permutations s)
+                            value
+                           )))
+
                      (partition3 top)
                      (partition3 mid)
                      (partition3 bot))]
     letters))
 
 (ocr "
- _     _  _     _  _  _  _  _ 
-| |  | _| _||_||_ |_   ||_||_|
-|_|  ||_  _|  | _||_|  ||_|  |
-                              
+ _     _  _     _  _  _  _  _     _  _ 
+| |  | _| _||_||_ |_   ||_||_|| || | _|
+|_|  ||_  _|  | _||_|  ||_|  ||_| _|  |
 ")
