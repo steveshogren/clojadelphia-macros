@@ -47,30 +47,31 @@
 
 (defn character-at [idx]
   (case idx
-    0 " "
-    1 "_"
-    2 " "
-    3 "|"
-    4 "_"
-    5 "|"
-    6 "|"
-    7 "_"
-    8 "|"
-    " "))
+    0 [" "]
+    1 ["_" " "]
+    2 [" "]
+    3 ["|" " "]
+    4 ["_" " "]
+    5 ["|" " "]
+    6 ["|" " "]
+    7 ["_" " "]
+    8 ["|" " "]
+    [" "]))
 
 (defn permutations [st]
   (filter (comp not nil?)
-          (map (fn [x]
-                 (let [attempt (apply str (assoc (vec st) x (character-at x)))]
-                   (println (str "message" attempt) )
-                   (lookup attempt)))
-               (range (count st))))
+          (mapcat (fn [x]
+                    (let [options (character-at x)
+                          attempts (->> options
+                                        (map #(lookup (apply str (assoc (vec st) x %))))
+                                        (filter (comp not nil?)))]
+                      attempts))
+                  (range (count st))))
   )
 
 (defn ocr [d]
-  (let [[top mid bot space] (filter (fn [x]
-                              (not= "" x))
-                            (clojure.string/split d #"\n"))
+  (let [[top mid bot space] (filter (fn [x] (not= "" x))
+                                    (clojure.string/split d #"\n"))
         letters (map (fn [t m b]
                        (let [s (str t m b)
                              value (lookup s)]
@@ -78,7 +79,6 @@
                             (permutations s)
                             value
                            )))
-
                      (partition3 top)
                      (partition3 mid)
                      (partition3 bot))]
