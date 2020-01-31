@@ -1,3 +1,6 @@
+(ns katas.katas
+  (:require [clojure.test :refer :all]))
+
 (defn collector [x]
   (reduce (fn [m next]
             (update m next (fn [x] (inc (or x 0)))))
@@ -89,3 +92,17 @@
 | |  | _| _||_||_ |_   ||_||_|| || | _|
 |_|  ||_  _|  | _||_|  ||_|  ||_| _|  |
 ")
+
+
+(with-test
+  (defn potter [books]
+    (reduce + (map (fn [x] (* 0.95 8)) books))
+    )
+
+  (testing "Potter"
+    (testing "basic counting"
+      (is (= 15.2 (potter ["a", "b"]))))))
+
+
+(run-tests)
+
