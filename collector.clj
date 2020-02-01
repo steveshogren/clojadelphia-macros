@@ -96,13 +96,24 @@
 
 (with-test
   (defn potter [books]
-    (reduce + (map (fn [x] (* 0.95 8)) books))
+    (let [uniqueCount (count (set books))
+          mult (case uniqueCount
+                 2 0.95
+                 3 0.90
+                 4 0.80
+                 5 0.75
+                 1.0)]
+      (reduce + (map (fn [x] (* mult 8)) books)))
     )
 
   (testing "Potter"
     (testing "basic counting"
-      (is (= 15.2 (potter ["a", "b"]))))))
-
+      (is (= 15.2 (potter ["a", "b"])))
+      (is (= 21.6 (potter ["a", "b", "c"])))
+      (is (= 25.6 (potter ["a", "b", "c", "d"])))
+      (is (= 30.0 (potter ["a", "b", "c", "d", "e"])))
+      )))
+(* 5 (* 0.75 8))
 
 (run-tests)
 
