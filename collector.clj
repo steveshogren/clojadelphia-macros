@@ -93,27 +93,36 @@
 |_|  ||_  _|  | _||_|  ||_|  ||_| _|  |
 ")
 
+(defn potter [books]
+  (let [uniqueCount (count (set books))
+        mult (case uniqueCount
+               2 0.95
+               3 0.90
+               4 0.80
+               5 0.75
+               1.0)]
+    (+ (* 8 (- (count books) uniqueCount))
+       (* (* mult 8) uniqueCount))))
 
-(with-test
-  (defn potter [books]
-    (let [uniqueCount (count (set books))
-          mult (case uniqueCount
-                 2 0.95
-                 3 0.90
-                 4 0.80
-                 5 0.75
-                 1.0)]
-      (reduce + (map (fn [x] (* mult 8)) books)))
-    )
+(deftest potter-tests
+  (testing "basic counting"
+    (is (= 15.2 (potter ["a" "b"])))
+    (is (= 21.6 (potter ["a" "b" "c"])))
+    (is (= 25.6 (potter ["a" "b" "c" "d"])))
+    (is (= 30.0 (potter ["a" "b" "c" "d" "e"])))
+    (is (= 38.0 (potter ["a" "a" "b" "c" "d" "e"])))
+    (is (= 45.2 (potter ["a" "a" "b" "b" "c" "d" "e"])))
+    ))
 
-  (testing "Potter"
-    (testing "basic counting"
-      (is (= 15.2 (potter ["a", "b"])))
-      (is (= 21.6 (potter ["a", "b", "c"])))
-      (is (= 25.6 (potter ["a", "b", "c", "d"])))
-      (is (= 30.0 (potter ["a", "b", "c", "d", "e"])))
-      )))
-(* 5 (* 0.75 8))
+(defn vecDifference [x y]
+  x)
+
+(deftest vecDifferenceTest
+  (testing ""
+    (is (= [1 2] (vecDifference [1 2] [3 4])))
+    ))
+
+;; (+ (* 2 0.95 8) (* 5 (* 0.75 8)))
 
 (run-tests)
 
