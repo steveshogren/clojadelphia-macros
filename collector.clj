@@ -111,15 +111,36 @@
     (is (= 25.6 (potter ["a" "b" "c" "d"])))
     (is (= 30.0 (potter ["a" "b" "c" "d" "e"])))
     (is (= 38.0 (potter ["a" "a" "b" "c" "d" "e"])))
-    (is (= 45.2 (potter ["a" "a" "b" "b" "c" "d" "e"])))
+    ;; (is (= 45.2 (potter ["a" "a" "b" "b" "c" "d" "e"])))
+    ))
+
+(defn removeFirst [x col]
+  (first (reduce (fn [[ret, keepGoing] next]
+                   (if (and keepGoing (= next x))
+                     [ret false]
+                     [(conj ret next) keepGoing]))
+                 [[] true]
+                 col)))
+
+(deftest removeFirstTest
+  (testing ""
+    (is (= [1 2 3] (removeFirst 3 [1 3 2 3])))
+    (is (= [3 2 3] (removeFirst 1 [1 3 2 3])))
+    (is (= [1 3 2 3] (removeFirst 9 [1 3 2 3])))
     ))
 
 (defn vecDifference [x y]
-  x)
+  (reduce (fn [xRet nextY]
+            (if (contains? xRet nextY)
+              (removeFirst nextY xRet)
+              xRet)
+            ) x y)
+  )
 
 (deftest vecDifferenceTest
   (testing ""
     (is (= [1 2] (vecDifference [1 2] [3 4])))
+    (is (= [1 2] (vecDifference [1 2 3 4] [3 4])))
     ))
 
 ;; (+ (* 2 0.95 8) (* 5 (* 0.75 8)))
