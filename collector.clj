@@ -94,15 +94,18 @@
 ")
 
 (defn potter [books]
-  (let [uniqueCount (count (set books))
-        mult (case uniqueCount
-               2 0.95
-               3 0.90
-               4 0.80
-               5 0.75
-               1.0)]
-    (+ (* 8 (- (count books) uniqueCount))
-       (* (* mult 8) uniqueCount))))
+  (if (empty? books)
+    0
+    (let [uniqueTitles (set books)
+          uniqueCount (count uniqueTitles)
+          mult (case uniqueCount
+                 2 0.95
+                 3 0.90
+                 4 0.80
+                 5 0.75
+                 1.0)]
+      (+ (potter (vecDifference books uniqueTitles))
+         (* (* mult 8) uniqueCount)))))
 
 (deftest potter-tests
   (testing "basic counting"
@@ -111,7 +114,7 @@
     (is (= 25.6 (potter ["a" "b" "c" "d"])))
     (is (= 30.0 (potter ["a" "b" "c" "d" "e"])))
     (is (= 38.0 (potter ["a" "a" "b" "c" "d" "e"])))
-    ;; (is (= 45.2 (potter ["a" "a" "b" "b" "c" "d" "e"])))
+    (is (= 45.2 (potter ["a" "a" "b" "b" "c" "d" "e"])))
     ))
 
 (defn removeFirst [x col]
@@ -127,15 +130,14 @@
     (is (= [1 2 3] (removeFirst 3 [1 3 2 3])))
     (is (= [3 2 3] (removeFirst 1 [1 3 2 3])))
     (is (= [1 3 2 3] (removeFirst 9 [1 3 2 3])))
+    (is (= [] (removeFirst 9 [])))
     ))
 
-(defn vecDifference [x y]
+(defn vecDifference [from toRemove]
   (reduce (fn [xRet nextY]
-            (if (contains? xRet nextY)
-              (removeFirst nextY xRet)
-              xRet)
-            ) x y)
-  )
+            (removeFirst nextY xRet))
+          from
+          toRemove))
 
 (deftest vecDifferenceTest
   (testing ""
