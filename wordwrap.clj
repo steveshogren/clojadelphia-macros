@@ -1,6 +1,10 @@
 (ns katas.wordwrap
   (:require [clojure.test :refer :all]))
 
+(defn trace [str x]
+  (println str x)
+  x)
+
 (defn words [s]
   (clojure.string/split s #" "))
 
@@ -8,12 +12,14 @@
   (first (reduce (fn [[response remainingWidth] nextWord]
                   (let [wordLength (count nextWord)
                         currentLine (last response)]
-                    (if (<= remainingWidth wordLength)
-                      [(conj (drop-last response)
-                             (conj currentLine nextWord))
+                    (trace "word length" wordLength)
+                    (trace "response" response)
+                    (if (>= remainingWidth wordLength)
+                      [(trace "first ret" (conj (drop-last response)
+                                                (str currentLine nextWord)))
                        (- remainingWidth wordLength)]
-                      [(conj response [nextWord])
-                       (- remainingWidth wordLength)]
+                      [(trace "new line" (conj response [nextWord]))
+                       width]
                       )))
                 [[""] width]
                 (words input))))
