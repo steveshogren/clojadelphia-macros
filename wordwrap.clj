@@ -9,20 +9,18 @@
   (clojure.string/split s #" "))
 
 (defn wrap [input width]
-  (first (reduce (fn [[response remainingWidth] nextWord]
-                  (let [wordLength (count nextWord)
-                        currentLine (last response)]
-                    (trace "word length" wordLength)
-                    (trace "response" response)
-                    (if (>= remainingWidth wordLength)
-                      [(trace "first ret" (conj (drop-last response)
-                                                (str currentLine nextWord)))
-                       (- remainingWidth wordLength)]
-                      [(trace "new line" (conj response [nextWord]))
-                       width]
-                      )))
-                [[""] width]
-                (words input))))
+  (reverse (first (reduce (fn [[response remainingWidth] nextWord]
+                           (let [wordLength (count nextWord)
+                                 currentLine (last response)]
+                             (if (>= remainingWidth wordLength)
+                               [(conj (drop-last response)
+                                      (str currentLine nextWord))
+                                (- remainingWidth wordLength)]
+                               [(conj response nextWord) width]
+                               )))
+                         [[""] width]
+                         (words input)))))
+
 
 (deftest wordWrapTest
   (testing "wraps at boundaries"
