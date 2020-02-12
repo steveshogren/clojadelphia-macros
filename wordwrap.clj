@@ -11,10 +11,12 @@
 (defn wrap [input width]
   (reverse (first (reduce (fn [[response remainingWidth] nextWord]
                            (let [wordLength (count nextWord)
-                                 currentLine (last response)]
+                                 currentLine (first response)]
                              (if (>= remainingWidth wordLength)
-                               [(conj (drop-last response)
-                                      (str currentLine nextWord))
+                               [(conj (drop 1 response)
+                                      (str currentLine
+                                           (if (= "" currentLine) "" " ")
+                                           nextWord))
                                 (- remainingWidth wordLength)]
                                [(conj response nextWord) width]
                                )))
@@ -26,6 +28,7 @@
   (testing "wraps at boundaries"
     (is (= ["test"] (wrap "test" 4)))
     (is (= ["te" "st"]  (wrap "te st" 2)))
+    (is (= ["te st" "th ou"]  (wrap "te st th ou" 5)))
     )
 
   )
