@@ -6,30 +6,37 @@
   x)
 
 (defn insert [tree v]
-  (if (= 0 (count tree))
-    [v [] []]
-    (let [[node l r] tree]
-      (if (< v node)
-        [node (insert l v) r]
-        [node l (insert r v)]))))
+  (let [newNode (if (seq? v) v [v [] []])
+        [vv vl vr] newNode]
+    (if (= 0 (count tree))
+      newNode
+      (let [[node l r] tree]
+        (if (< vv node)
+          [node (insert l newNode) r]
+          [node l (insert r newNode)])))))
 
 (defn delete [tree v]
-  (if (= [] tree) tree
-      (let [[node l r] tree]
-        (if (= node v)
-          (cond
-            (and (= l []) (= r [])) []
-            (not= l []) (let [[lv ll lr] l]
-                          [lv ll r])
-            true (let [[rv rl rr] r]
-                          [rv l rr])
-            )
-          (if (< v node)
-            [node (delete l v) r]
-            [node l (delete r v)]
-            ))
+  (let [newNode (if (seq? v) v [v [] []])
+        [vv vl vr] newNode]
+    (if (= [] tree) tree
+        (let [[node l r] tree]
+          (if (= node vv)
+            (cond
+              (and (= l []) (= r [])) []
+              (not= l []) (let [[lv ll lr] l]
+                            (if (= [] lr)
+                              [lv ll r]
+                              [lv ll (insert r lr)]
+                              ))
+              true (let [[rv rl rr] r]
+                     [rv l rr])
+              )
+            (if (< vv node)
+              [node (delete l newNode) r]
+              [node l (delete r newNode)]
+              ))
           )
-        )
+        ))
   )
 
 (deftest dfsTest
@@ -59,6 +66,19 @@
                      [4 [] []]]
                     []]
                    5)))
+
+    (is (= [6
+            [2
+             [1 [] []]
+             [4 [3 [] []] []]]
+            []]
+           (delete [6
+                    [5
+                     [2 [1 [] []] [3 [] []]]
+                     [4 [] []]]
+                    []]
+                   5)))
+
 
     (is (= [] (delete [] 2)))
     )
