@@ -49,27 +49,39 @@
         ))
   )
 
+(defn append-idx [col key val]
+  (if (contains? col key)
+    (update col key
+            (fn [old]
+              (conj old val)))
+
+    (assoc col key [val])))
+
 (defn pretty-print [tree]
-  (loop [nodes []
+  (loop [nodes {}
          queue [tree]
-         total-depth 0]
+         current-depth 0
+         max-depth 0]
     (let [tree (first queue)
-          newNode (if (and (vector? tree)
-                           (not= [] tree)) tree [tree [] []])
-          [vv vl vr] newNode]
-      (if (= [] vv)
-        nodes
+          [vv vl vr] (if (and (vector? tree)
+                              (not= [] tree)) tree [tree [] []])]
+      ;;(print vv)
+      (if (or (= nil vv) (= [] vv))
+        (if (< 0 (count queue))
+          (recur nodes (drop 1 queue) (- current-depth 1)
+                 (if (< max-depth current-depth) current-depth max-depth))
+          nodes)
         (do
-          (recur (conj nodes vv)
-                 (conj (conj queue vl) vr)
-                 (inc total-depth)
+          (recur (append-idx nodes current-depth vv)
+                 (conj (conj (drop 1 queue) vl) vr)
+                 (inc current-depth)
+                 max-depth
                  )
             ))))
   )
 
-;; (pretty-print [5 [2 [] []] [9 [] []]])
 
-;;(pretty-print [6 [5 [2 [] []] [4 [] []]] []])
+(pretty-print [6 [5 [2 [] []] [4 [] []]] []])
 
 
 (deftest dfsTest
